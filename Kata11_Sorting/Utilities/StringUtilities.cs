@@ -13,7 +13,10 @@ namespace Kata11_Sorting_Part2.Function
             string cleanedString = Clean(inputString);
             List<char> chars = cleanedString.ToList();
 
-            //applied bubble sort algorithm
+            //applied bubble sort algorithm, but
+            //an other solution could considers char as bytes:
+            //saving each char as an array of byte (each char stored as byte) and a loop
+            //that prints 0x60, 0x61 (with 0xY increased at each cycle)
             for (int j = 0; j <= cleanedString.Length - 2; j++)
             {
                 for (int i = 0; i <= cleanedString.Length - 2; i++)
@@ -45,6 +48,10 @@ namespace Kata11_Sorting_Part2.Function
             stringToClean = stringToClean.Replace(")", "");
             stringToClean = stringToClean.Replace("?", "");
             stringToClean = stringToClean.Replace("'", "");
+            stringToClean = stringToClean.Replace("$", "");
+            stringToClean = stringToClean.Replace("%", "");
+            stringToClean = stringToClean.Replace("&", "");
+            stringToClean = stringToClean.Replace("/", "");
 
             string cleanedString = stringToClean;
             return cleanedString;
